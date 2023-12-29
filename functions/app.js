@@ -1,10 +1,9 @@
+const serverless = require('serverless-http');
 const express = require('express');
 const app = express();
-const serverless = require('serverless-http')
-app.get('/', (res, req) => {
+
+app.get('/', (req, res) => {
     res.send("say hello !!!")
-})
-app.listen(7000, () => {
-    console.log('ok,7000');
-})
+});
+
 module.exports.handler = serverless(app);
